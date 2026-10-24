@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important; }
+</style>
+<title>Math 10 Quiz Bee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Unbounded:wght@700;800&display=swap">
+<style>
+/* Layout: a single centered column with two large choices, on the same graph-paper board as the game. */
+:root {
+  --board: #0f2a2c;
+  --board-2: #15383b;
+  --line: rgba(226, 240, 232, 0.06);
+  --chalk: #eef4ec;
+  --muted: #9fbab3;
+  --yellow: #f3d35c;
+  --mint: #7fdcae;
+  --display: 'Unbounded', 'Arial Black', system-ui, sans-serif;
+  --body: 'Atkinson Hyperlegible', 'Segoe UI', system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background-color: var(--board);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: var(--chalk); font-family: var(--body); font-size: 17px; line-height: 1.5;
+}
+.wrap {
+  max-width: 720px; margin: 0 auto; min-height: 100vh;
+  padding-block: 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; align-content: center; gap: 28px;
+}
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(1.8rem, 6vw, 3rem); margin: 0; line-height: 1.1; text-wrap: balance; }
+h1 span { color: var(--yellow); }
+.lead { color: var(--muted); margin: 8px 0 0; max-width: 52ch; }
+.choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+a.choice {
+  display: grid; gap: 6px; padding: 22px; border-radius: 16px; text-decoration: none; color: inherit;
+  background: var(--board-2); border: 1px solid rgba(238, 244, 236, 0.15); transition: border-color 0.15s, transform 0.1s;
+}
+a.choice:hover { border-color: var(--yellow); }
+a.choice:active { transform: translateY(1px); }
+a.choice:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+.who { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--mint); }
+a.teacher .who { color: var(--yellow); }
+.name { font-family: var(--display); font-weight: 700; font-size: 1.25rem; }
+.desc { color: var(--muted); font-size: 0.95rem; }
+.foot { color: var(--muted); font-size: 0.82rem; margin: 0; }
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <header>
+    <h1>Math 10 <span>Quiz Bee</span></h1>
+    <p class="lead">MATATAG Grade 10 Mathematics. Quarters 1 to 4 and a Sines and Cosines set, with hints and a mastery check for every topic.</p>
+  </header>
+  <div class="choices">
+    <a class="choice teacher" href="quiz-bee.html">
+      <span class="who">Teacher · projector</span>
+      <span class="name">Quiz Bee</span>
+      <span class="desc">Run the game for the class: rounds, hints, answers, team scores and the mastery report.</span>
+    </a>
+    <a class="choice" href="student-pad.html">
+      <span class="who">Students · phone</span>
+      <span class="name">Student Pad</span>
+      <span class="desc">Hold up your answer during the game, or practice on your own with hints.</span>
+    </a>
+  </div>
+  <p class="foot">Scores and progress are saved in each device’s browser.</p>
+</main>
+</body>
+</html>
